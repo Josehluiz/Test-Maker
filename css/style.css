@@ -65,11 +65,16 @@ hr {
 .Container_file_icons {
     width: 2.5vw;
     height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
-.Container_file_icons img {
-    width: 100%;
-    height: auto;
+.Container_file_icons i {
+    font-size: 2rem; /* Tamanho dos ícones */
+    color: #E0E0E0; /* Cor dos ícones */
+    padding: 10px; /* Espaçamento interno opcional */
 }
 
 .file_desc{
@@ -88,11 +93,11 @@ hr {
     justify-content: space-between;
     border-radius: 20px;
     width: 300px;
-    height: 4vh;
+    height: 5.7vh;
     border: #4E4E4E;
     border-style: dashed;
     border-width: 1px;
-    padding: 0px 7px;
+    padding: 2px 12px;
 }
 
 .container_file_upload {
@@ -308,4 +313,3 @@ hr {
     border-radius: 100px;
     z-index: 999;
 }
-
