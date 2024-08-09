@@ -313,3 +313,16 @@ hr {
     border-radius: 100px;
     z-index: 999;
 }
+.container_textarea{
+    width: 94%;
+    height: 92%;
+}
+
+#text-input{
+    background-color: #242424;
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 1.2rem;
+    color: #E0E0E0;
+}
