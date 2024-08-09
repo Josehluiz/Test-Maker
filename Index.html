@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Test Maker</title>
+</head>
+<body>
+    <div class="container_branding">
+        <div id="logo_tm">
+            <img src="imagens/logo_teste_maker.png" alt="Logo Test maker">
+        </div>
+        <h1>Test Maker</h1>
+    </div>
+    <form id="contact-form">
+        <div class="container_apr">
+            <p id="Bem_vindo">
+                Bem vindo (nome da conta)! você já pode começar a criar seu formulário. Comece selecionando a matéria.
+            </p>
+        </div>
+
+        <hr>
+        
+        <div id="container_upload_select">
+            <div class="container_file_upload">
+                <div><h2>Tipo de arquivo</h2></div>
+                <div class="file_desc">     
+                    <p>Selecione o tipo de arquivo e arraste o documento para a janela</p>
+                </div>
+                <div class="file_icons">
+                    <div class="Container_file_icons">
+                        <i class="bi bi-pencil-fill"></i>
+                    </div>
+                    <div class="Container_file_icons">
+                        <i class="bi bi-play-circle-fill" id="playIcon"></i>
+                    </div>
+                    <div class="Container_file_icons">
+                        <i class="bi bi-link-45deg"></i>
+                    </div>
+                    <div class="Container_file_icons">
+                        <i class="bi bi-paperclip"></i>
+                  </div>
+                </div>
+            </div>
+            <div>
+                <h2>Tipo de questão</h2>
+                <div class="container_Tipo">
+                    <div class="container_sep2">
+                        <div class="checkbox-container">
+                            <input type="checkbox" class="checkbox1" name="question-type" value="multiple-choice">
+                            <span class="checkbox-custom"></span>
+                            <label for="checkbox1">Múltipla escolha</label>
+                        </div>
+                        <div class="checkbox-container">
+                            <input type="checkbox" class="checkbox1" name="question-type" value="short-answer">
+                            <span class="checkbox-custom"></span>
+                            <label for="checkbox1">Resposta curta</label>
+                        </div>
+                        <div class="checkbox-container">
+                            <input type="checkbox" class="checkbox1" name="question-type" value="paragraph">
+                            <span class="checkbox-custom"></span>
+                            <label for="checkbox1">Parágrafo</label>
+                        </div>
+                    </div>
+
+                    <div class="container_sep1">
+                        <div class="checkbox-container">
+                            <input type="checkbox" class="checkbox1" name="question-type" value="checkbox">
+                            <span class="checkbox-custom"></span>
+                            <label for="checkbox1">Caixa de seleção</label>
+                        </div>    
+
+                        <div class="checkbox-container">
+                            <input type="checkbox" class="checkbox1" name="question-type" value="checkbox">
+                            <span class="checkbox-custom"></span>
+                            <label for="checkbox1">Caixa de seleção</label>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="Container_drop">
+            <div class="container_drop_img">
+                <i class="bi bi-file-earmark-arrow-down-fill"></i>
+            </div>
+            <div class="drop_down_inst_container">
+                <h3>ARRASTE OS ARQUIVOS AQUI</h3>
+                <p>Podem ser colocados aqui arquivos .PDF .PPTX</p>
+            </div>
+        </div>
+
+        <div class="container_info">
+            <div class="Grade_group">
+                <input type="text" id="exam-year" name="exam-year" placeholder="Para que ano se aplica a prova? (Define a dificuldade)"> 
+            </div>
+            <div class="quantity_questions">
+                <p>N° de questões<p>
+                <div class="menos_mais">
+                    <button id="mais" type="button">+</button>
+                    <div class="container_contagem"><p id="contagem"></p></div>
+                    <button id="menos" type="button">-</button>
+                </div>
+            </div>
+        </div>
+        <button id="generate" type="submit">GERAR</button>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="Google Sheet.js"></script>
+    <script src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+
+
+
+<style>
+        html, body {
+    margin: 0;
+    padding: 20px;
+    background-color: #191919;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin-bottom: 0;
+    font-size: 2.7em;
+    color: #E0E0E0;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin-bottom: 0;
+    font-size: 2.1em;
+    color: #E0E0E0;
+}
+
+.container_branding {
+    margin: 0;
+    padding: 0;
+    width: 305px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#logo_tm {
+    height: 60px;
+    width: 60px;
+    top: -2px;
+    position: relative;
+    margin-right: 6px;
+}
+
+#logo_tm img {
+    height: 100%;
+    width: 100%;
+}
+
+.container_apr {
+    margin: 55px 0;
+    width: 70vw;
+}
+
+#Bem_vindo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #E0E0E0;
+}
+
+hr {
+    border-color: #4E4E4E;
+    border-style: solid;
+}
+
+.Container_file_icons {
+    width: 2.5vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.Container_file_icons i {
+    font-size: 2rem; /* Tamanho dos ícones */
+    color: #E0E0E0; /* Cor dos ícones */
+    padding: 10px; /* Espaçamento interno opcional */
+}
+
+.file_desc{
+    padding-top: 20px;
+    color: #E0E0E0;
+}
+
+.file_desc p {
+    font-size: 1.2rem;
+}
+
+.file_icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+    width: 300px;
+    height: 5.7vh;
+    border: #4E4E4E;
+    border-style: dashed;
+    border-width: 1px;
+    padding: 2px 12px;
+}
+
+.container_file_upload {
+    width: 450px;
+    height: 175px;
+}
+
+.container_Tipo{
+    height: 175px;
+    width: 500px;
+    background-color: #202020;
+    border: #4E4E4E;
+    border-style: dashed;
+    border-width: 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 25px;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.checkbox-container
+{
+    height: 48px;
+    width: 230px;
+}
+
+.checkbox-container label{
+    border-radius: 100%;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #333;
+    align-items: center;
+    font-size: 1.2em;
+    color: #E0E0E0;
+    font-weight: 200;
+    padding: 10px;
+}
+
+
+#container_upload_select {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.checkbox-container input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-custom {
+    width: 20px;
+    height: 20px;
+    background-color: #202020;
+    border: 1px solid #E3CDFE;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkbox-custom {
+    background-color: #202020;
+    border-color: #E3CDFE;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkbox-custom::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #E3CDFE;
+    border-radius: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+#Container_drop {
+
+    width: 93vw;
+    height: 55vh;
+    background-color: #242424;
+    margin-top: 4vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(rgb(15, 15, 15) 0rem 0.8rem 10px);
+    border-radius: 20px;
+}
+
+.container_drop_img{
+    width: 20vh;
+    height: 20vh;
+}
+
+.container_drop_img img{
+    width: 100%;
+    height: 100%;
+}
+
+.drop_down_inst_container{
+    padding-top: 10px;
+    color: #E0E0E0;
+    font-weight: 100;
+}
+
+.drop_down_inst_container h3{
+    margin: none;
+    padding-top:20px ;
+    font-weight: 100;
+    margin-bottom: 0%;
+    text-align: center;
+}
+
+.drop_down_inst_container p{
+    text-align: center;
+}
+
+#generate{
+    background-color:  #E3CDFE;
+    border-radius: 30px;
+    border-style: none;
+    width: 18vw;
+    height: 7vh;
+    color: #202020;
+    font-size: 1.6rem;
+}
+
+.container_info{
+    display: flex;
+    flex-direction: row;
+    margin: 30px 0px 0px ;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+#exam-year{
+    height: 40px;
+    color: #E0E0E0;
+    background-color: #191919;
+    border-radius: 30px;
+    border-style: none;
+    margin: 10px;
+    width: 70vw;
+    padding: 0px 15px;
+}
+
+.Grade_group{
+    background-color: #202020;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    height: 8vh;
+    width: 70vw;
+    align-items: center;
+}
+
+.quantity_questions{
+    display: flex;
+    flex-direction: column;
+    width: 18vw;
+    background-color: #202020;
+    border-radius: 15px;
+    padding: 10px;
+    top: -5px;
+    position: relative;
+    align-items: center;
+}
+.quantity_questions p{
+    color: #E0E0E0;
+    font-size: 1.2rem;
+}
+
+.menos_mais{
+    display: flex;
+    flex-direction: row;
+    background-color: #191919;
+    width: 15vw;
+    height: 7vh;
+    border-radius: 100px;
+    justify-content: space-evenly;
+    z-index: 1;
+    position: relative;
+    align-items: center;
+    
+}
+
+#mais{
+    background-color: transparent;
+    color: #E0E0E0;
+    border-style: none;
+    font-size: 3rem;
+    font-weight: 100;
+}
+
+#menos{
+    background-color: transparent;
+    color: #E0E0E0;
+    border-style: none;
+    font-size: 3rem;
+    font-weight: 100;
+}
+
+.container_contagem{
+    background-color: #E0E0E0;
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    z-index: 999;
+}
+</style>
+</body>
+</html>
