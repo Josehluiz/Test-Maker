@@ -326,3 +326,8 @@ hr {
     font-size: 1.2rem;
     color: #E0E0E0;
 }
+
+#response{
+    height: 20vh;
+    color: #E0E0E0;
+}
