@@ -1,8 +1,5 @@
-API_KEY = "sk-svcacct-REIsG31SgljOfbVqtiZPrsq-H_DVb46M119RSnDcb78PTrLRkT3BlbkFJIMUZT8M0tbmoePmQahd7jVpz7Suy_f5VHsKEzu-Ao3T6lgcAA"
-
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Evento para adicionar o textarea quando o ícone do lápis for clicado
+
     document.getElementById('pencil_icon').addEventListener('click', function() {
         document.getElementById('Container_drop').innerHTML = `
             <div class="container_textarea">
@@ -11,42 +8,49 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
     });
 
-    // Evento para capturar o clique no botão GERAR
-    document.getElementById('generate').addEventListener('click', function(event) {
-        event.preventDefault();  // Evita que o formulário seja enviado e a página recarregada
-
-        const userInput = document.getElementById('text-input')?.value; // Captura o conteúdo do textarea
-        if (!userInput) {
-            alert('Por favor, insira algum texto para gerar o teste.');
-            return;
-        }
-
-        // Faz a requisição para a API com o conteúdo do textarea
-        fetch('https://sua-api-endpoint.com/gerar-teste', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${API_KEY}` // Substitua pelo seu token de API
-            },
-            body: JSON.stringify({ prompt: userInput }) // Envia o texto inserido
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Exibe o resultado no contêiner
-            document.getElementById('response').innerHTML = `
-                <div class="api-response">
-                    <h3>Resultado Gerado:</h3>
-                    <p>${data.resultado}</p>
-                </div>
-            `;
-        })
-        .catch(error => {
-            console.error('Erro:', error);
-            document.getElementById('response').innerHTML = `
-                <div class="api-response">
-                    <p>Ocorreu um erro ao gerar o teste. Tente novamente.</p>
-                </div>
-            `;
-        });
+    document.getElementById('paperclip_icon').addEventListener('click', function() {
+        document.getElementById('Container_drop').innerHTML = `
+            <div class="container_drop_img">
+                <img src="imagens/drop_down_file_icon.png" alt="selecione e coloque aqui o arquivo">
+            </div>
+            <div class="drop_down_inst_container">
+                <h3>ARRASTE OS ARQUIVOS AQUI</h3>
+                <p>Podem ser colocados aqui arquivos .PDF .PPTX</p>
+            </div>
+        `;
     });
+
+
+    const maisButton = document.getElementById('mais');
+    const menosButton = document.getElementById('menos');
+    const contagemElement = document.getElementById('contagem');
+
+
+    let count = parseInt(contagemElement.textContent.trim(), 10);
+    if (isNaN(count)) {
+        count = 0;
+    }
+    
+    maisButton.addEventListener('click', () => {
+        count++;
+        contagemElement.textContent = count;
+        updateButtons();
+    });
+
+    menosButton.addEventListener('click', () => {
+        if (count > 0) {
+            count--;
+            contagemElement.textContent = count;
+        }
+        updateButtons();
+    });
+
+    function updateButtons() {
+        menosButton.disabled = count === 0;
+    }
+
+
+    updateButtons();
 });
+
+console.log('Valor inicial:', count);
