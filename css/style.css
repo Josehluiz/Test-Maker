@@ -72,9 +72,9 @@ hr {
 }
 
 .Container_file_icons i {
-    font-size: 2rem; /* Tamanho dos ícones */
-    color: #E0E0E0; /* Cor dos ícones */
-    padding: 10px; /* Espaçamento interno opcional */
+    font-size: 2rem;
+    color: #E0E0E0;
+    transition: transform 0.3s ease-in-out;
 }
 
 .file_desc{
@@ -98,6 +98,7 @@ hr {
     border-style: dashed;
     border-width: 1px;
     padding: 2px 12px;
+    overflow: hidden;
 }
 
 .container_file_upload {
@@ -361,4 +362,14 @@ hr {
 #response{
     height: 20vh;
     color: #E0E0E0;
+}
+
+.Container_file_icons i:hover{
+    background-color: #242424;
+    height: max-content;
+    width: 4rem;
+    border-radius: 100%;
+    animation: ease-in;
+    transform: scale(1.1);
+    height: fit-content;
 }
