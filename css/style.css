@@ -104,6 +104,7 @@ hr {
 .container_file_upload {
     width: 450px;
     height: 175px;
+    margin-bottom: 40px;
 }
 
 .container_Tipo{
@@ -143,9 +144,15 @@ hr {
 
 #container_upload_select {
     display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: space-between;
+    width: 100%;
+}
+
+.container_file_upload,
+.col-12.col-md-6 {
+    /* Garantir que ambas ocupem largura total nos seus respectivos tamanhos */
+    flex: 1;
+    margin-right: 10px; /* Ajuste de margem direita para espaçamento */
 }
 
 .checkbox-container input[type="checkbox"] {
@@ -194,6 +201,7 @@ hr {
     cursor: pointer;
     z-index: 2;
 }
+
 
 #Container_drop {
 
