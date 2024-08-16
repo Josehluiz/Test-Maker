@@ -11,18 +11,17 @@ document.addEventListener('DOMContentLoaded', function () {
         createForm.classList.remove('d-none'); // Mostra o createForm
     });
 
-    // Mostrar o loader e redirecionar ao clicar no botão "Avançar"
     advanceBtn.addEventListener('click', function () {
-        loader.classList.remove('d-none'); // Exibe o loader
+        loader.classList.remove('d-none');
         setTimeout(() => {
-            loader.classList.add('d-none'); // Esconde o loader após o tempo
-            window.location.href = 'gerar.html'; // Redireciona para gerar.html
-        }, 500); // Tempo do loader antes de redirecionar
+            loader.classList.add('d-none'); 
+             window.location.href = 'index.html';
+        }, 500); 
     });
 
-    // Fechar o formulário e mostrar o cartão ao clicar no botão "Fechar"
+
     closeBtn.addEventListener('click', function () {
-        createForm.classList.add('d-none'); // Oculta o createForm
-        createCard.classList.remove('d-none'); // Mostra o createCard
+        createForm.classList.add('d-none');
+        createCard.classList.remove('d-none'); 
     });
 });

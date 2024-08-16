@@ -8,14 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Maker - Home</title>
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="../css/home.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"> <!-- Bootstrap Icons -->
 </head>
 <body>
     <header class="d-flex justify-content-between align-items-center p-3">
         <div class="container_branding d-flex align-items-center">
             <div id="logo_tm">
-                <img src="imagens/logo_teste_maker.png" alt="Logo Test maker">
+                <img src="../imagens/logo_teste_maker.png" alt="Logo Test maker">
             </div>
             <h1 class="ms-2">Test Maker</h1>
         </div>
@@ -47,7 +47,19 @@
         </div>
     </div>
 
-    <script src="home.js"></script>
+    <!-- Seção de Cards -->
+    <div id="card-section" class="container d-flex flex-column align-items-center mt-4 d-none">
+        <div class="mb-3">
+            <button id="generateCardBtn" class="btn btn-success">Gerar Card</button>
+            <button id="deleteCardBtn" class="btn btn-danger ms-2">Deletar Card</button>
+            <button id="returnPageBtn" class="btn btn-secondary ms-2 d-none">Voltar</button>
+        </div>
+        <div id="cardContainer" class="row g-4"></div>
+    </div>
+
+    <div id="containerPerguntas" class="container mt-4"></div>
+
+    <script src="../js/home.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
 </body>

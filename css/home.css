@@ -15,7 +15,7 @@ header {
 .card {
     background-color: #202020;
     border: 4px solid #E3CDFE;
-    border-radius: 8px; 
+    border-radius: 8px;
     padding: 20px;
     width: 100%;
     max-width: 400px;
@@ -54,8 +54,8 @@ header {
 
 #exam-name::placeholder,
 #exam-description::placeholder {
-    color: #a8a8a8; 
-    opacity: 1; 
+    color: #a8a8a8;
+    opacity: 1;
 }
 
 #exam-description {
@@ -63,7 +63,7 @@ header {
     background-color: #191919;
     border: none;
     border-radius: 20px;
-    color: #fff; 
+    color: #fff;
     padding: 10px;
 }
 
@@ -92,8 +92,8 @@ h1 {
 }
 
 .profile-icon {
-    color: #d1d1d1; 
-    display: flex; 
+    color: #d1d1d1;
+    display: flex;
     align-items: center;
     justify-content: center;
     height: 50px;
@@ -111,11 +111,11 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999; /* Assegura que o loader apareça sobre outros elementos */
+    z-index: 9999;
 }
 
 .spinner-border {
@@ -123,7 +123,7 @@ h1 {
     height: 3rem;
 }
 
-/* Estilo do botão de fechar */
+
 #close-btn {
     position: absolute;
     top: 10px;
@@ -137,4 +137,15 @@ h1 {
 
 #close-btn:hover {
     color: #ccc;
+}
+
+#card-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#generateCardBtn,
+#deleteCardBtn,
+#returnPageBtn {
+    border-radius: 20px;
 }
